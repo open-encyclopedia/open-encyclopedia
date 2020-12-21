@@ -1,0 +1,28 @@
+{:duct.profile/base
+ {:duct.core/project-ns open-encyclopedia
+
+  :duct.router/cascading
+  [#ig/ref :open-encyclopedia.static/root
+   #ig/ref :open-encyclopedia.api/config
+   #ig/ref :open-encyclopedia.api/example]
+  :duct.middleware.web/defaults {:security {:anti-forgery false}}
+  :duct.middleware.web/format {}
+  :duct.handler/root {:middleware [#ig/ref :duct.middleware.web/format]}
+  :duct.compiler/sass
+  {:source-paths ["resources"]
+   :output-path "target/resources"}
+  :open-encyclopedia.static/root {}
+  :open-encyclopedia.api/example {}
+  :open-encyclopedia.api/config {}}
+
+ :duct.profile/dev   #duct/include "dev"
+ :duct.profile/local #duct/include "local"
+ :duct.profile/prod  {}
+
+ :duct.module/logging {}
+ :duct.module.web/site
+ {}
+ :duct.module/cljs
+ {:main open-encyclopedia.client}
+ :hydrogen.module/core
+ {:figwheel-main true}}

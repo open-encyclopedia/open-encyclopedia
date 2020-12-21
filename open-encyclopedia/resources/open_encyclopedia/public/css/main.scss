@@ -1,0 +1,57 @@
+/**
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/
+ */
+
+@import 'button';
+@import 'theming';
+@import 'utils';
+@import 'tooltip';
+@import 'generic-popup';
+@import 'loading-popup';
+
+/* A normalized styling */
+html, body, #app, .app-container{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-family: 'Poppins', sans-serif;
+  --hydrogen-black: #262c2d;
+  --hydrogen-darker: #161a1b;
+  --hydrogen-brown: #997d56;
+  --hydrogen-darker-brown: #6e593e;
+  --hydrogen-white: #ffffff;
+  --hydrogen-darker-white: #ccc;
+}
+
+/* TODO I dindn't put a lot of effort into the quality of this stylesheet.
+That's because we'll soon decide on the standards of writing them.
+The stylesheet presented new is there just as an example of usage.
+~@DH 2018.10.25 */
+
+.app-container {
+  display: flex;
+}
+
+.app-container__sidebar {}
+
+.app-container__main {
+  flex: 1;
+  overflow: auto;
+
+  min-height: calc(100vh);
+  background: var(--hydrogen-black);
+  text-align: center;
+  color: var(--hydrogen-white);
+}
+
+.demo-greeting {
+  font-size: 3rem;
+  font-weight: bold;
+}
