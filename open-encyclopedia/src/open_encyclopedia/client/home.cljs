@@ -3,10 +3,11 @@
 ;; file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 (ns open-encyclopedia.client.home
-  (:require [re-frame.core :as rf]
+  (:require [open-encyclopedia.client.layout.toolbar :as toolbar]
             [open-encyclopedia.client.tooltip :as tooltip]
             [open-encyclopedia.client.tooltip.loading-popup :as loading-popup]
-            [open-encyclopedia.client.view :as view]))
+            [open-encyclopedia.client.view :as view]
+            [re-frame.core :as rf]))
 
 (rf/reg-event-fx
  ::go-to-home
@@ -41,11 +42,9 @@
 (defn- DELETEME-demo-loading []
   [:button.btn {:on-click #(rf/dispatch [::DELETEME-demo-request])}
    "Pretend you are requesting something from the Internet"])
+
 ;; end of obsolete demo code
 
 (defn main []
   [:div
-   [:img {:src "images/hydrogen-logo-white.svg" :alt "Hydrogen logo"}]
-   [:h1.demo-greeting "Welcome to Hydrogen!"]
-   [DELETEME-demo-tooltip]
-   [DELETEME-demo-loading]])
+   [toolbar/main]])

@@ -1,0 +1,28 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  @include background-color('background-color');
+  @include color('primary-color');
+
+  & > * {
+    margin: $spacing-normal;
+  }
+}
+
+.toolbar--header {
+  @include color('primary-dark-color');
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.toolbar--link-container {
+  display: flex;
+
+  & > * {
+    padding: $spacing-normal;
+    margin-right: $spacing-normal;
+  }
+}
