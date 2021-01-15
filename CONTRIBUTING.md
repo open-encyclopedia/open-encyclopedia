@@ -10,7 +10,8 @@ Please note we have a code of conduct, please follow it in all your interactions
 1. Ensure any install or build dependencies are removed before the end of the layer when doing a 
    build.
 2. Ensure that your code does not have any formatting/runtime issues. 
-   Please use `lein cljfmt fix` and `lein cljfmt eastwood`, and make the necessary changes 
+   Please use `lein cljfmt fix` and `lein cljfmt eastwood` in the directory where your
+   `project.clj` file is located, and make the necessary changes 
    if anything fails before you commit.
 3. Update the CONTRIBUTORS.md with details of changes to the interface, this includes new environment 
    variables, exposed ports, useful file locations and container parameters, and your contact details.
