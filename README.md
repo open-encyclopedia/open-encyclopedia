@@ -101,6 +101,6 @@ Check out our awesome contributors [here](./CONTRIBUTORS.md)!
 
 ## License
 
-[MIT](./LICENSE)
+[GPL-3.0](./LICENSE)
 
 
