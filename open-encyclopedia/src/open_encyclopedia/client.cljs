@@ -4,15 +4,17 @@
 
 (ns ^:figwheel-hooks open-encyclopedia.client
   (:require [day8.re-frame.http-fx]
-            [re-frame.core :as rf]
-            [reagent.dom :as rd]
+            [open-encyclopedia.client.history :as history]
             [open-encyclopedia.client.home :as home]
             [open-encyclopedia.client.routes :as routes]
+            [open-encyclopedia.client.sex-education :as sex-education]
             [open-encyclopedia.client.theme :as theme]
             [open-encyclopedia.client.tooltip :as tooltip]
             [open-encyclopedia.client.tooltip.generic-popup :as tooltip.generic-popup]
             [open-encyclopedia.client.tooltip.loading-popup :as tooltip.loading-popup]
-            [open-encyclopedia.client.view :as view]))
+            [open-encyclopedia.client.view :as view]
+            [reagent.dom :as rd]
+            [re-frame.core :as rf]))
 
 (def default-db
   {:theme :light})
@@ -32,7 +34,8 @@
        [:div.app-container__main
         {:id "app-container__main"}
         (case @active-view
-          :foo [:div "FIXME"]
+          :history [history/main]
+          :sex-education [sex-education/main]
           [home/main])]
        [tooltip.loading-popup/main]
        [tooltip.generic-popup/main]])))

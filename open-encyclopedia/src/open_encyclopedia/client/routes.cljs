@@ -7,10 +7,12 @@
   (:import goog.History)
   (:require [goog.events]
             [goog.history.EventType :as EventType]
-            [re-frame.core :as rf]
-            [secretary.core :as secretary]
+            [open-encyclopedia.client.history :as history]
             [open-encyclopedia.client.home :as home]
-            [open-encyclopedia.client.view :as view]))
+            [open-encyclopedia.client.sex-education :as sex-education]
+            [open-encyclopedia.client.view :as view]
+            [re-frame.core :as rf]
+            [secretary.core :as secretary]))
 
 (defn hook-browser-navigation! []
   (doto (History.)
@@ -27,6 +29,12 @@
 
   (defroute "/home" []
     (rf/dispatch [::home/go-to-home]))
+
+  (defroute "/history" []
+    (rf/dispatch [::history/go-to-history]))
+
+  (defroute "/sex-education" []
+    (rf/dispatch [::sex-education/go-to-sex-education]))
 
   ;; --------------------
   (hook-browser-navigation!))
